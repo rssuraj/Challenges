@@ -30,8 +30,8 @@ $.getJSON('http://starlord.hackerearth.com/TopRamen', (data) => {
             brands = topRamens[year];
         }
         $('div#years').append('<button type="button" '
-        + 'class="list-group-item list-group-item-action">'
-        + year + '</button>');
+        + 'class="list-group-item list-group-item-action"><strong>'
+        + year + '</strong></button>');
     });
 
     //Make the first button div#years active
@@ -111,13 +111,13 @@ function addTopRamens(brands) {
         var place = topTen.split(' ')[1];
         ids.push(place.replace('#', ''));
 
-        $('div#listDiv').append('<div id="' + place.replace('#', '') +'" class="fadeIn col-12 col-md-6 col-lg-4 p-2 rounded border border-light bg-secondary">'
-        + '<h4><strong class="text-dark">Place:</strong> ' + place + '</h4>'
-        + '<h4><strong class="text-dark">Brand:</strong> ' + brand['Brand'] + '</h4>'
-        + '<h4><strong class="text-dark">Variety:</strong> ' + brand['Variety'] + '</h4>'
-        + '<h4><strong class="text-dark">Style:</strong> ' + brand['Style'] + '</h4>'
-        + '<h4><strong class="text-dark">Country:</strong> ' + brand['Country'] + '</h4>'
-        + '<h4><strong class="text-dark">Stars:</strong> ' + brand['Stars'] + '</h4>'
+        $('div#listDiv').append('<div id="' + place.replace('#', '') +'" class="fadeIn col-12 col-md-6 col-lg-3 p-2 m-2 rounded border border-light">'
+        + '<h5><strong class="text-danger">Place:</strong> ' + place + '</h4>'
+        + '<h5><strong class="text-danger">Brand:</strong> ' + brand['Brand'] + '</h4>'
+        + '<h5><strong class="text-danger">Variety:</strong> ' + brand['Variety'] + '</h4>'
+        + '<h5><strong class="text-danger">Style:</strong> ' + brand['Style'] + '</h4>'
+        + '<h5><strong class="text-danger">Country:</strong> ' + brand['Country'] + '</h4>'
+        + '<h5><strong class="text-danger">Stars:</strong> ' + brand['Stars'] + '</h4>'
         + '</div>');
     });
 
@@ -131,7 +131,7 @@ function searchKey(val) {
     //Remove Highlighted TopRamens
     array.forEach((topRamen) => {
         var place = topRamen['Top Ten'].split(' ')[1];
-        $('div' + place).removeClass('bg-warning');
+        $('div' + place).removeClass('d-none');
     });
 
     if(val === '')
@@ -146,10 +146,10 @@ function searchKey(val) {
         var country = topRamen['Country'];
         var stars = topRamen['Stars'];
         
-        if(brand.indexOf(val) !== -1 || variety.indexOf(val) !== -1
+        if(!(brand.indexOf(val) !== -1 || variety.indexOf(val) !== -1
             || style.indexOf(val) !== -1 || country.indexOf(val) !== -1
-            || stars == val) {
-            $('div' + place).addClass('bg-warning');
+            || stars == val)) {
+            $('div' + place).addClass('d-none');
         }
     });
 }

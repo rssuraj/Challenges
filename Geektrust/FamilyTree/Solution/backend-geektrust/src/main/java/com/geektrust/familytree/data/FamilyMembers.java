@@ -82,24 +82,24 @@ public class FamilyMembers {
             Couple childCouple = null;
             if(person.equalsName(FamilyConstants.DRITHA)) {
                 childCouple = new Couple(new Person(FamilyConstants.JAYA, GenderEnum.MALE), person);
-                addMember(couple.getHusband());
+                addMember(childCouple.getHusband());
                 childCouple.getChildren().add(new Person(FamilyConstants.YODHAN, GenderEnum.MALE));
             }
             else if(person.equalsName(FamilyConstants.JNKI)) {
                 childCouple = new Couple(new Person(FamilyConstants.ARIT, GenderEnum.MALE), person);
-                addMember(couple.getHusband());
+                addMember(childCouple.getHusband());
                 childCouple.getChildren().add(new Person(FamilyConstants.LAKI, GenderEnum.MALE));
                 childCouple.getChildren().add(new Person(FamilyConstants.LAVNYA, GenderEnum.FEMALE));
             }
             else if(person.equalsName(FamilyConstants.VYAS)) {
                 childCouple = new Couple(person, new Person(FamilyConstants.KRPI, GenderEnum.FEMALE));
-                addMember(couple.getWife());
+                addMember(childCouple.getWife());
                 childCouple.getChildren().add(new Person(FamilyConstants.KRIYA, GenderEnum.MALE));
                 childCouple.getChildren().add(new Person(FamilyConstants.KRITHI, GenderEnum.FEMALE));
             }
             else if(person.equalsName(FamilyConstants.ASVA)) {
                 childCouple = new Couple(person, new Person(FamilyConstants.SATVY, GenderEnum.FEMALE));
-                addMember(couple.getWife());
+                addMember(childCouple.getWife());
                 childCouple.getChildren().add(new Person(FamilyConstants.VASA, GenderEnum.MALE));
             }
 

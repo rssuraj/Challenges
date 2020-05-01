@@ -1,0 +1,29 @@
+GET_RELATIONSHIP Suraj Maternal-Aunt
+GET_RELATIONSHIP Ish Maternal-Aunt
+GET_RELATIONSHIP Asva Maternal-Aunt
+GET_RELATIONSHIP Vila Paternal-Uncle
+GET_RELATIONSHIP Asva Maternal-Uncle
+GET_RELATIONSHIP Vila Paternal-Aunt
+GET_RELATIONSHIP Yodhan Maternal-Aunt
+GET_RELATIONSHIP Lavnya Maternal-Aunt
+GET_RELATIONSHIP Atya Sister-In-Law
+GET_RELATIONSHIP Vyan Sister-In-Law
+GET_RELATIONSHIP Aras Brother-In-Law
+GET_RELATIONSHIP Ahit Brother-In-Law
+GET_RELATIONSHIP Vyan Brother-In-Law
+GET_RELATIONSHIP Ish Son
+GET_RELATIONSHIP Vich Daughter
+GET_RELATIONSHIP Chitra Daughter
+GET_RELATIONSHIP Vasa Daughter
+GET_RELATIONSHIP Vich Siblings
+GET_RELATIONSHIP Chitra Siblings
+GET_RELATIONSHIP Vasa Siblings
+GET_RELATIONSHIP Atya Siblings
+GET_RELATIONSHIP Aria Siblings
+ADD_CHILD Chitra Aria Female
+GET_RELATIONSHIP Aria Siblings
+ADD_CHILD Pjali Srutak Male
+GET_RELATIONSHIP Pjali Son
+ADD_CHILD Asva Vani Female
+GET_RELATIONSHIP Vasa Siblings
+GET_RELATIONSHIP Atya Sister-In-Law

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eXpense Split (eXS)</title>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/homePage.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-left">
+        <div class="vision">
+            <h1>eXSplit</h1>
+            <p>Split Expense Anywhere.</p>
+            <p>Anytime.</p>
+        </div>
+    </div>
+
+    <div class="container-right">
+        <div id="login-form" class="section">
+            <form class="form" action="#">
+                <div class="inputs">
+                    <div class="input">
+                        <i class="fas fa-user"></i>
+                        <input id="loginUser" type="text" placeholder="Username" required>
+                    </div>
+            
+                    <div class="input">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+
+                    <label class="checkbox">
+                        Remember me
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                
+                <div>
+                    <button id="loginBtn">Login</button>
+                    <button id="showSignIn">Sign In</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="register-form" class="section">
+            <form class="form" action="#">
+                <div class="inputs">
+                    <div class="input">
+                        <i class="fas fa-envelope-square"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="input">
+                        <i class="fas fa-user"></i>
+                        <input id="newUser" type="text" placeholder="Username" required>
+                    </div>
+            
+                    <div class="input">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="input">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                </div>
+
+                <div>
+                    <button id="signInBtn">Sign In</button>
+                    <button id="showLogin" href="#">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="assets/js/homePage.js"></script>
+
+</body>
+</html>

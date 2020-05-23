@@ -4,9 +4,12 @@ var currentYear = '';
 
 //Retrieve the topRamen Data
 $.getJSON('http://starlord.hackerearth.com/TopRamen', (data) => {
+    //If the URL goes down, The dataStore kicks in
+    if(!data || data.length == 0) {
+        console.log(`Data from store!`);
+        data = topRamenData;
+    }
     for(var i = 0; i < data.length; i++) {
-        console.log(data[i]);
-
         var brand = data[i];
         var topTen = brand['Top Ten'];
 

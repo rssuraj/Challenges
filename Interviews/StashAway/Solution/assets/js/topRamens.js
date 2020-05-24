@@ -3,47 +3,19 @@ var topRamens = {};
 var currentYear = '';
 
 //Retrieve the topRamen Data
-$.getJSON('http://starlord.hackerearth.com/TopRamen', (data) => {
-    //If the URL goes down, The dataStore kicks in
-    if(!data || data.length == 0) {
-        console.log(`Data from store!`);
-        data = topRamenData;
-    }
-    for(var i = 0; i < data.length; i++) {
-        var brand = data[i];
-        var topTen = brand['Top Ten'];
-
-        //Add each topRamen to the its respective year,
-        //if 'Top Ten' property has a value
-        if(topTen !== 'NaN') {
-            var year = topTen.split(' ')[0];
-            var isPresent = Object.keys(topRamens).indexOf(year);
-            if(isPresent === -1) {
-                topRamens[year] = [];
-            }
-            addBrand(year, brand);
-        }
-    }
-
-    //The topRamens of First year in the list
-    var brands = null;
-    //Create li's for every year
-    Object.keys(topRamens).forEach((year) => {
-        if(brands == null) {
-            brands = topRamens[year];
-        }
-        $('div#years').append('<button type="button" '
-        + 'class="list-group-item list-group-item-action"><strong>'
-        + year + '</strong></button>');
-    });
-
-    //Make the first button div#years active
-    var firstYear = $('div#years button').first();
-    firstYear.addClass('active');
-    currentYear = firstYear.text();
-
-    //Construct the topRamen details for the first year
-    addTopRamens(brands);
+$.ajax({
+  type: 'GET',
+  url: 'http://starlord.hackerearth.com/TopRamen',
+  success: function(data) {
+	processData(data);
+    
+  },
+  error: function() {
+	//If the URL goes down, The dataStore kicks in
+    console.log(`Data from store!`);
+	data = topRamenData;
+    processData(data);
+  }
 });
 
 //==========================Handlers========================
@@ -79,6 +51,45 @@ $('input#search').keypress(function(event) {
 });
 
 //================FUNCTIONS===================================
+
+//Start processing data
+function processData(data) {
+	for(var i = 0; i < data.length; i++) {
+        var brand = data[i];
+        var topTen = brand['Top Ten'];
+
+        //Add each topRamen to the its respective year,
+        //if 'Top Ten' property has a value
+        if(topTen !== 'NaN') {
+            var year = topTen.split(' ')[0];
+            var isPresent = Object.keys(topRamens).indexOf(year);
+            if(isPresent === -1) {
+                topRamens[year] = [];
+            }
+            addBrand(year, brand);
+        }
+    }
+
+    //The topRamens of First year in the list
+    var brands = null;
+    //Create li's for every year
+    Object.keys(topRamens).forEach((year) => {
+        if(brands == null) {
+            brands = topRamens[year];
+        }
+        $('div#years').append('<button type="button" '
+        + 'class="list-group-item list-group-item-action"><strong>'
+        + year + '</strong></button>');
+    });
+
+    //Make the first button div#years active
+    var firstYear = $('div#years button').first();
+    firstYear.addClass('active');
+    currentYear = firstYear.text();
+
+    //Construct the topRamen details for the first year
+    addTopRamens(brands);
+}
 
 //Adds the brand at its proper position in sorted array
 function addBrand(year, brand) {

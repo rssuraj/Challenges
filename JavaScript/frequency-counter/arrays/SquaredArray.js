@@ -2,6 +2,15 @@
 	1. Write a function called same, which accepts 2 arrays.
 	2. The function should return true if every value in the 1st array has its corresponding value squared in 2nd array.
 	3. The frequency of values must be the same.
+
+	Input1: [1, 2, 3], [4, 1, 9]
+	Output1: true
+
+	Input2: [1, 2, 3], [1, 9]
+	Output2: false
+
+	Input3: [1, 2, 1], [4, 4, 1]
+	Output3: false
 */
 
 // Naive Solution
@@ -28,7 +37,7 @@ function same(arr1, arr2) {
 
 // Refactored Solution
 // Time: O(N)
-// Space: O(1)
+// Space: O(N)
 function same(arr1, arr2) {
 	if(arr1.length != arr2.length)
 		return false;
@@ -55,7 +64,7 @@ function same(arr1, arr2) {
 
 // Colt Steel Refactored Solution
 // Time: O(N)
-// Space: O(1)
+// Space: O(N)
 function same(arr1, arr2) {
 	if(arr1.length != arr2.length)
 		return false;

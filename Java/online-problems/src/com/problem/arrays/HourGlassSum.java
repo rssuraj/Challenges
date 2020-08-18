@@ -1,7 +1,7 @@
 package com.problem.arrays;
 
 /**
- * HACKERRANK Problem
+ * HACKERRANK
  * 
  * Given a 6x6 2D Array, arr:
 

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * LEETCODE Problem
+ * LEETCODE
  * 
  * Given a non-empty array of integers, every element appears twice except for one. Find that single one.
 
